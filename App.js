@@ -1,10 +1,11 @@
 
 import * as React from 'react'; 
 import 'react-native-gesture-handler';
-import { NavigationContainer, TabActions } from '@react-navigation/native';
-import { createStackNavigator, HeaderBackground } from '@react-navigation/stack'; 
+import { NavigationContainer,   } from '@react-navigation/native';
+import { createStackNavigator,   } from '@react-navigation/stack'; 
+import { YellowBox } from 'react-native';
+import { LogBox } from 'react-native';
 
-import { DeviceEventEmitter, NativeAppEventEmitter, Platform } from 'react-native';
 import BackgroundTimer from 'react-native-background-timer';
 
 import Home from './src/Home';
@@ -14,16 +15,19 @@ import Login from './src/Login';
 import AddDespesa from './src/AddDespesa';
 import Preload from './src/PreLoad';
 import AddReceita from './src/AddReceita';
-import { StatusBar } from 'react-native'; 
-
+import { StatusBar } from 'react-native';  
  
+
+
+YellowBox.ignoreWarnings(['Setting a timer']);
+
 const Stack = createStackNavigator();
+  
 
 function App() {
-  BackgroundTimer.clearInterval();
-  return ( 
-
-    
+  BackgroundTimer.clearInterval(); 
+ 
+  return (  
     <NavigationContainer>
       
       <Stack.Navigator>
@@ -32,8 +36,9 @@ function App() {
       <Stack.Screen name="Interna" component={Interna}
             options={{
               title:'',   
-              headerShown: false
+              headerShown: false 
             }}  
+            
         />
         <Stack.Screen name="Preload" component={Preload} 
               options={{
@@ -92,3 +97,4 @@ function App() {
   );
 } 
 export default App;
+

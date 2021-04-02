@@ -1,7 +1,10 @@
+import { timeSharp } from 'ionicons/icons';
 import React, { Component } from 'react';
 import { View,Text,StyleSheet, ImageBackground, TextInput, TouchableOpacity, Button, } from 'react-native';   
+import { Value } from 'react-native-reanimated';
 import firebase from './FireConnection'; 
 
+import HistoricoItem from './HistoricoItem';  
 export default class AddReceita extends Component {
     constructor(props) {
         super(props);
@@ -26,8 +29,8 @@ export default class AddReceita extends Component {
 
             historico.child(key).set({
                 type:'Receita',
-                valor: this.state.valor
-            })
+                valor: this.state.valor , 
+            }) 
 
              
             //currentUser (selecionar usuario atua)
@@ -40,13 +43,16 @@ export default class AddReceita extends Component {
 
                     user.set({
                         saldo:saldo
-                    })
-
+                        
+                    })  
                     alert("Adicionado com Sucesso!");
+ 
+ 
 
-                 })
-        
-        } 
+                 })  
+                  
+        }
+         
     } 
        
     render(){
@@ -64,6 +70,7 @@ export default class AddReceita extends Component {
                             style={styles.input}
                             keyboardType="numeric"
                             value={this.state.valor}
+                            placeholder={"0"}
                             onChangeText={(valor)=>this.setState({valor})} 
                         />  
                          <TouchableOpacity style={styles.button} onPress={this.add}>
@@ -91,25 +98,28 @@ const styles = StyleSheet.create( {
     }, 
     text: {
         fontWeight:"bold",
+        fontSize:25,
         color:"#ffff"
     },
-    input: {
-        height:45,
+    input: { 
+        textAlign:"center",
+        fontSize:100,
+        height:200,
         padding:10,
         marginTop:10,
         marginBottom:10,
-        borderRadius:5,
-        backgroundColor: "#fff"
+        borderRadius:5, 
     },
     button: {
         height:45,
-        backgroundColor:"#f25c10",
+        backgroundColor:"#53d67f",
         borderRadius:5,
         justifyContent:"center"
        },
     textBtn: {
         fontWeight:"bold",
         textAlign:"center",
+        fontSize:17,
         color:"#fff", 
         alignContent:"center"
     },

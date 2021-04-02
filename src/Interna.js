@@ -6,6 +6,8 @@ import firebase from 'firebase';
 
 import HistoricoItem from './HistoricoItem';  
  
+
+console.ignoredYellowBox = ['Setting a timer'];
 export default class Interna extends Component {
     constructor(props) {
         super(props);
@@ -46,6 +48,7 @@ export default class Interna extends Component {
             }else {
                 this.props.navigation.navigate('Home');
             }
+ 
         })
  
     }
@@ -86,8 +89,8 @@ export default class Interna extends Component {
                     <TouchableOpacity onPress={this.addDispesa}  style={styles.button}>
                        <Text  style={styles.textBtn}>Adicionar Despesa</Text>
                    </TouchableOpacity>
-                   <TouchableOpacity onPress={this.addSair}  style={[styles.button, {backgroundColor:'#fff'}   ]}>
-                       <Text  style={[styles.textBtn, {color:"#777"}]}>Sair</Text>
+                   <TouchableOpacity onPress={this.addSair}  style={[styles.button, {backgroundColor:'#f27676'}   ]}>
+                       <Text  style={[styles.textBtn, {color:"#fff"}]}>Sair</Text>
                    </TouchableOpacity> 
                 </View>
             </ImageBackground>
@@ -108,8 +111,9 @@ const styles = StyleSheet.create( {
         justifyContent:"center", 
         margin:10
     },
-    valor: {
-        justifyContent:"center",
+    valor: { 
+        justifyContent:"center", 
+        alignItems:"center",
         alignContent:"center",
     },
     numberTitle: {
@@ -118,11 +122,13 @@ const styles = StyleSheet.create( {
     },
     number: {
          fontSize:50,
+         fontWeight:"bold",
          color:"#fff"
     },
     area: {
-        marginTop:50,
-        marginBottom:10,
+        marginTop:40,
+        margin:30, 
+        marginBottom:-30, 
         alignContent:"center",
         justifyContent:"center",    
         alignItems:"center",  
@@ -144,23 +150,27 @@ const styles = StyleSheet.create( {
         fontSize:16
     },
     historico: { 
-        flex:1,
+        paddingTop:30,
+        flex:1, 
+        borderTopRightRadius:30,
+        borderTopLeftRadius:30,
         borderRadius:5, 
         height:300,   
-        backgroundColor: 'rgba(33, 33, 52, 2.2)',
+        backgroundColor: '#eee',
     },
     button: {
         height:45,
         marginTop:5,
         marginBottom:5,
-        backgroundColor:"#f25c10",
+        backgroundColor:"#53d67f",
         borderRadius:5,
         justifyContent:"center"
     },
     textBtn: {
            fontWeight:"bold",
            textAlign:"center",
-           color:"#fff"
+           color:"#fff",
+           fontSize:17,
     },
     userArea: {  
         height:100,
@@ -172,3 +182,4 @@ const styles = StyleSheet.create( {
     },
      
 })
+ 

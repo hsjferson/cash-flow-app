@@ -26,7 +26,7 @@ export default class HistoricoItem extends Component {
     }
 }
 const styles = StyleSheet.create( {
-    area: {  
+    area: {   
         padding:10,
         flexDirection:"row",
         justifyContent:"space-between"
