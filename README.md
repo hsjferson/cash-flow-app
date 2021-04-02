@@ -6,6 +6,7 @@
 
 • Instale o pacote: <br>
     npm install
+    sera necessario criar seu arquivo de conecção com o banco de dados Firebase.
 
 ### Uso
 
