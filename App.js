@@ -82,9 +82,8 @@ function App() {
       </Stack.Navigator>
 
       <StatusBar  
-      // remove status bar 
-      hidden = {false}   
-      //preenche area
+
+      hidden = {false}    
       translucent = {true}
 
       backgroundColor={'transparent'}
